@@ -12,9 +12,10 @@ spec:
       labels:
         app: nginx
     spec:
-      containers:
-      - name: nginx
-        image: your-dockerhub-username/nginx-custom:latest
+     containers:
+  - name: nginx
+    image: gtashree/nginx-custom:latest  # Your actual Docker Hub username
+
         ports:
         - containerPort: 80
 ---
