@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -12,12 +12,12 @@ spec:
       labels:
         app: nginx
     spec:
-     containers:
-  - name: nginx
-    image: gtashree/nginx-custom:latest  # Your actual Docker Hub username
+      containers:
+        - name: nginx
+          image: gtashree/nginx-custom:latest
+          ports:
+            - containerPort: 80
 
-        ports:
-        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
